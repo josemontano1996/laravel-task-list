@@ -14,6 +14,12 @@ class Task extends Model
         'long_description',
     ];
 
+    public function toggleComplete(): void
+    {
+        $this->completed = !$this->completed;
+        $this->save();
+    }
+
     /*  public function getRouteKeyName(){
          return 'slug';
      } */
