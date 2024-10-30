@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-<form action="{{ isset($task) ? route('tasks.update', ['task' => $task->id]) : route('tasks.store') }}" method="POST">
+<form action="{{ isset($task) ? route('tasks.update', ['task' => $task->id]) : route('tasks.store') }}" method="POST" class="space-y-4">
     @csrf
     @isset($task)
         @method('PUT')
@@ -40,7 +40,7 @@
         @enderror
     </div>
 
-    <button>
+    <button class="btn">
         @isset($task)
             Update task
         @else
